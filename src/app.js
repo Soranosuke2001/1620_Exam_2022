@@ -52,3 +52,16 @@ const contactsList = [
 ]
 
 // Your code goes here
+// Displays all the cards
+const display_all_contacts_area = document.querySelector('#display_all_contacts')
+
+for (const cards of contactsList) {
+  const card_name = cards.name
+  const image_source = cards.image
+  const single_card = `<div><img src='../img/${image_source}' alt='profile picture'><p>${card_name}</p></div>`
+  display_all_contacts_area.insertAdjacentHTML('beforeend', single_card)
+}
+
+// function display_all_cards (single_card) {
+//   display_all_contacts_area.insertAdjacentHTML('beforeend', single_card)
+// }
