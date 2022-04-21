@@ -86,6 +86,16 @@ function show_singlecard(clicked_card) {
   const card_name = contactsList[clicked_card].name
   const card_phone = contactsList[clicked_card].phone
   const card_email = contactsList[clicked_card].email
-  single_card_display = `<div id='individual_contact'><img id=${card_id} src='../img/${image_source}'<brk><h1>${card_name}</h1><brk><p>${card_phone}</p><p>${card_email}</p><span></span></div>`
+  single_card_display = `<div id='individual_contact'><img id=${card_id} src='../img/${image_source}'<brk><brk><h1>${card_name}</h1><brk><p>${card_phone}</p><p>${card_email}</p><span><i class="fa-solid fa-circle"></i></span></div>`
   display_single_card.insertAdjacentHTML('beforeend', single_card_display)
+  const single_card_close = getElementById('individual_contact')
+  close_singlecard(single_card_close)
 }
+
+function close_singlecard(single_card_close) {
+  single_card_close.style.display = 'none'
+  display_all_cards()
+}
+
+// The random dot below the email was supposed to be the button to close the single card
+// I was not able able to add the event listener to close the card
